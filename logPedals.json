@@ -1,0 +1,222 @@
+{
+    "accelerator": [
+        {
+            "press": false,
+            "time": 0.4337913990020752
+        },
+        {
+            "press": true,
+            "time": 0.4012160301208496
+        },
+        {
+            "press": false,
+            "time": 0.1743161678314209
+        },
+        {
+            "press": true,
+            "time": 0.41071367263793945
+        },
+        {
+            "press": false,
+            "time": 0.107421875
+        },
+        {
+            "press": true,
+            "time": 0.4570963382720947
+        },
+        {
+            "press": false,
+            "time": 0.12171292304992676
+        },
+        {
+            "press": true,
+            "time": 0.11600112915039062
+        },
+        {
+            "press": false,
+            "time": 0.09337401390075684
+        },
+        {
+            "press": true,
+            "time": 0.10034871101379395
+        },
+        {
+            "press": false,
+            "time": 0.08923649787902832
+        },
+        {
+            "press": true,
+            "time": 0.10046100616455078
+        },
+        {
+            "press": false,
+            "time": 0.1009829044342041
+        },
+        {
+            "press": true,
+            "time": 0.13422918319702148
+        },
+        {
+            "press": false,
+            "time": 0.07200193405151367
+        },
+        {
+            "press": true,
+            "time": 0.7383460998535156
+        },
+        {
+            "press": false,
+            "time": 0.183335542678833
+        },
+        {
+            "press": true,
+            "time": 0.47483372688293457
+        },
+        {
+            "press": false,
+            "time": 5.31983757019043
+        },
+        {
+            "press": true,
+            "time": 0.32396674156188965
+        },
+        {
+            "press": false,
+            "time": 0.10287618637084961
+        },
+        {
+            "press": true,
+            "time": 0.11099553108215332
+        },
+        {
+            "press": false,
+            "time": 0.05164504051208496
+        },
+        {
+            "press": true,
+            "time": 0.0930168628692627
+        },
+        {
+            "press": false,
+            "time": 0.05966353416442871
+        },
+        {
+            "press": true,
+            "time": 0.08062362670898438
+        },
+        {
+            "press": false,
+            "time": 0.05427241325378418
+        },
+        {
+            "press": true,
+            "time": 0.06778907775878906
+        },
+        {
+            "press": false,
+            "time": 0.060125112533569336
+        },
+        {
+            "press": true,
+            "time": 0.05549120903015137
+        },
+        {
+            "press": false,
+            "time": 0.05221819877624512
+        },
+        {
+            "press": true,
+            "time": 0.05758023262023926
+        },
+        {
+            "press": false,
+            "time": 0.015625953674316406
+        },
+        {
+            "press": true,
+            "time": 0.527437686920166
+        },
+        {
+            "press": false,
+            "time": 0.11448931694030762
+        },
+        {
+            "press": true,
+            "time": 0.09709692001342773
+        },
+        {
+            "press": false,
+            "time": 0.026747465133666992
+        },
+        {
+            "press": true,
+            "time": 0.09607291221618652
+        },
+        {
+            "press": false,
+            "time": 0.061373233795166016
+        },
+        {
+            "press": true,
+            "time": 0.07007265090942383
+        },
+        {
+            "press": false,
+            "time": 0.0609278678894043
+        },
+        {
+            "press": true,
+            "time": 0.08214020729064941
+        },
+        {
+            "press": false,
+            "time": 0.0677340030670166
+        },
+        {
+            "press": true,
+            "time": 0.05789971351623535
+        },
+        {
+            "press": false,
+            "time": 0.06751418113708496
+        },
+        {
+            "press": true,
+            "time": 0.06395101547241211
+        },
+        {
+            "press": false,
+            "time": 0.048798561096191406
+        },
+        {
+            "press": true,
+            "time": 0.10515737533569336
+        },
+        {
+            "press": false,
+            "time": 0.06578707695007324
+        },
+        {
+            "press": true,
+            "time": 0.10878777503967285
+        },
+        {
+            "press": false,
+            "time": 0
+        },
+        {
+            "press": false,
+            "time": 0
+        }
+    ],
+    "break": [
+        {
+            "press": false,
+            "time": 0
+        },
+        {
+            "press": false,
+            "time": 0
+        }
+    ]
+}

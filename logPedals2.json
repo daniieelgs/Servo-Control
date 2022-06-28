@@ -1,0 +1,38 @@
+{
+    "accelerator": [
+        {
+            "press" : true,
+            "time" : 1
+        },
+        {
+            "press" : false,
+            "time" : 1
+        },
+        {
+            "press" : true,
+            "time" : 1
+        },
+        {
+            "press" : false,
+            "time" : 1
+        }
+    ],
+    "break": [
+        {
+            "press" : true,
+            "time" : 1
+        },
+        {
+            "press" : false,
+            "time" : 1
+        },
+        {
+            "press" : true,
+            "time" : 1
+        },
+        {
+            "press" : false,
+            "time" : 1
+        }
+    ]
+}
