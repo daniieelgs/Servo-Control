@@ -4,27 +4,38 @@ import os
 
 class FileLoggerPedal(LoggerPedal):
     
-    def __init__(self, nameFile, *nameRegisters):
+    def __init__(self, nameFile, *nameRegisters, writable = False, printLog = True):
         self.__nameFile = nameFile
         self.__json = JSONController(nameFile)
         self.data = {}
         self.cursor = {}
-        self.printLog = True
-        self.writable = True
+        self.printLog = printLog
+        self.writable = writable
+        self.nameRegisters = nameRegisters
         
         for n in nameRegisters:
             self.cursor[n] = 0
         
-        if not os.path.exists(nameFile):
-            for n in nameRegisters: self.data[n] = []
-            self.__json.setRegister(self.data)
+        if not os.path.exists(nameFile) or self.writable:
+            self.writeMode()
         else:
-            print("READING")
-            for n in nameRegisters:
-                self.data[n] = self.__json.getRegisterPedal(n)
+            self.readMode()
                 
         print(self.data)        
 
+    def readMode(self):
+        print("READING")
+        for n in self.nameRegisters:
+            self.data[n] = self.__json.getRegisterPedal(n)
+    
+    def writeMode(self):
+        print("WRITTING")
+        for n in self.nameRegisters: self.data[n] = []
+        self.__json.setRegister(self.data)       
+        
+    def setWritable(self, writable):
+        self.writable = writable 
+        self.writeMode() if writable else self.readMode()
         
     def registerPress(self, name, timer):
         if self.printLog: print(f"Pedal '{name} - Time: {timer} pressed")
@@ -42,10 +53,7 @@ class FileLoggerPedal(LoggerPedal):
     
     def setPrintLog(self, enable):
         self.printLog = enable
-     
-    def setWritable(self, enable):
-        self.writable = enable 
-        
+             
     def save(self):
         if self.writable:
             for i in self.data:

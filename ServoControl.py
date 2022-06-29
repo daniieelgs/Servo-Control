@@ -4,12 +4,14 @@ from PedalAccelerator import PedalAccelerator
 from PedalBreak import PedalBreak
 import Controller
 
-#Controller.readMode()
-Controller.writeMode()  
-Controller.startPins()
-
 try:
-    #Controller.execute()
+    mode = input(">> ").lower()
+
+    #Controller.readMode()
+    if mode == 'w': Controller.writeMode()  
+    Controller.startPins()
+    
+    if mode != 'w': Controller.execute()
     input("\nEnter to exit\n")
     Controller.exit()
 

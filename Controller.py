@@ -9,54 +9,50 @@ import time
 BUTTON_ACCELERATOR = 10
 BUTTON_BREAK = 8
 
+write = False
+
 GPIO.setwarnings(False)
 
 ACCELERATOR = PedalAccelerator.ACCELERATOR()
 BREAK = PedalBreak.BREAK()
 
-nameFile = "logPedals.json"
+nameFile = input("File: ").strip() or "logPedals.json"
+print(nameFile)
 logPedal = FileLoggerPedal(nameFile, ACCELERATOR, BREAK)
 eventPedalAcc = PedalEventLogger(logPedal, printLog=False)
 eventPedalBr = PedalEventLogger(logPedal, printLog=False)
 
-#logPedal.setPrintLog(False)
-#logPedal.setWritable(False)
+def writeMode():
+    global write
+    write = True
+    logPedal.setWritable(write)  
+    
+def readMode():
+    global write
+    write = False
+    logPedal.setWritable(write)  
 
 button_pedal = {
     BUTTON_ACCELERATOR : PedalAccelerator(eventPedalAcc),
     BUTTON_BREAK : PedalBreak(eventPedalBr)
     }
 
-write = False
-
-def writeMode():
-    global write
-    write = True  
-    
-def readMode():
-    global write
-    write = False
-
 lastPushed = {}
 
 def callback_event_button(channel):
     
-    if not channel in lastPushed.keys():
-        lastPushed[channel] = -1
+    if not channel in lastPushed.keys(): lastPushed[channel] = -1
     
     if GPIO.input(channel) == lastPushed[channel]: return
     
-    if GPIO.input(channel) == GPIO.HIGH:
-        button_pedal[channel].press()
-    else:
-        button_pedal[channel].unpress()
+    if GPIO.input(channel) == GPIO.HIGH: button_pedal[channel].press()
+    else: button_pedal[channel].unpress()
         
     lastPushed[channel] = GPIO.input(channel)
 
 def startPins():
         
-    global write
-        
+    global write    
     mode = "Write" if write else "Read"    
     print(f"{mode} Mode")   
         
@@ -65,10 +61,8 @@ def startPins():
     conf.pinConfig(BUTTON_ACCELERATOR)
     conf.pinConfig(BUTTON_BREAK)
     
-    
 def execute():
-    if write: return False
-    
+    if write: return False   
     logPedal.setPrintLog(False)
     logPedal.setWritable(False)
     

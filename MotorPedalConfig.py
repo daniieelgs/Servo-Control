@@ -4,18 +4,22 @@ import time
 
 class MotorPedalConfig(PinnerConfiguration):
     
-    def pinConfig(self, channel):
-        channel = int(channel)
-        GPIO.setmode(GPIO.BOARD)
+    def __init__(self, channel, defaultDutyCycle = 12, GPIOMode = GPIO.BOARD):
+        PinnerConfiguration.__init__(self, channel, GPIOMode=GPIOMode)
+        self.defaultDutyCycle = defaultDutyCycle
+    
+    def pinConfig(self):
+        channel = self.channel
+        GPIO.setmode(self.GPIOMode)
         GPIO.setup(channel, GPIO.OUT)
         p = GPIO.PWM(channel, 50)
         self.__motor = p
-        p.start(12)
-        p.ChangeDutyCycle(12)
+        p.start(self.defaultDutyCycle)
+        p.ChangeDutyCycle(self.defaultDutyCycle)
         return p
     
-    def disable(self, channel):
-        GPIO.setmode(GPIO.BOARD)
-        self.__motor.ChangeDutyCycle(12)
+    def disable(self):
+        GPIO.setmode(self.GPIOMode)
+        self.__motor.ChangeDutyCycle(self.defaultDutyCycle)
         time.sleep(0.2)
-        GPIO.cleanup(channel)
+        GPIO.cleanup(self.channel)
